@@ -180,7 +180,15 @@
                 optionInput.value = i;
                 optionInput.required = true;
                 optionLabel.appendChild(optionInput);
-                optionLabel.appendChild(document.createTextNode(` ${i}`));
+
+                let labelText = ` ${i}`;
+                if (i === 1) {
+                    labelText += " - Strongly Disagree";
+                } else if (i === 5) {
+                    labelText += " - Strongly Agree";
+                }
+
+                optionLabel.appendChild(document.createTextNode(labelText));
                 optionsDiv.appendChild(optionLabel);
             }
 
